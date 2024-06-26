@@ -6,14 +6,17 @@ export const state = {
     y: 100,
     width: 50,
     height: 50,
+    lastMagicUse: 0,
+    cooldown: 500,
   },
   isGameOver: false,
-  points: 0,
+  score: 0,
   controls: {
     KeyA: false,
     KeyS: false,
     KeyD: false,
     KeyW: false,
     Space: false,
-  }
+  },
+  
 };
