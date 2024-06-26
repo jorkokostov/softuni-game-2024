@@ -19,6 +19,9 @@ function newFrame() {
   }
  }
 
+ //create bugs
+ factory.createBug();
+
   //apply score
   state.score+= config.timePoints;
   gameScore.textContent = state.score + 'pts.';
