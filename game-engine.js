@@ -3,6 +3,7 @@ import{ factory } from "./game-objects.js"
 import { config } from "./game-config.js";
 
 const gameScore = document.querySelector('.game-score');
+const gameArea = document.querySelector('.game-area');
 //Game frames
 function newFrame() {
   //Move wizard
@@ -11,7 +12,11 @@ function newFrame() {
   //Modify fireballs
  const fireballs = document.querySelectorAll('.fireball');
  for (const fireball of fireballs) {
-  fireball.style.left = fireball.offsetLeft + config.magicSpeed + 'px';
+  if(fireball.offsetLeft > gameArea.offsetWidth){
+    fireball.remove();
+  }else {
+    fireball.style.left = fireball.offsetLeft + config.magicSpeed + 'px';
+  }
  }
 
   //apply score
@@ -27,7 +32,6 @@ function newFrame() {
 //TODO: Fix acceleration on diagonals
 function modifyWizardPosition() {
   const wizardElement = document.getElementById('wizard');
-  const gameArea = document.querySelector('.game-area')
 
   const { wizard } = state;
 
