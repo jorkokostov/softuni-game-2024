@@ -1,7 +1,7 @@
 //State initialization
 const state = {
   player: 'Gosho',
-  wizzard: {
+  wizard: {
     x: 100,
     y: 100,
     width: 50,
@@ -15,6 +15,7 @@ const factory = {
   createWizard(wizard){
     //create element
     const wizardElement = document.createElement('div');
+    wizardElement.id = 'wizard';
 
     //set styles
     wizardElement.style.width = wizard.width + 'px';
@@ -43,7 +44,11 @@ const factory = {
 
 //Game frames
 function newFrame() {
+  const wizardElement = document.getElementById('wizard');
 
+  wizardElement.style.left = `${state.wizard.x++}px`;
+
+  window.requestAnimationFrame(newFrame);
 }
 
 //Start game
@@ -53,5 +58,8 @@ startElement.addEventListener('click', (e) => {
   e.currentTarget.classList.add('hidden');
 
   //Initializa game
-  factory.createWizard(state.wizzard)
+  factory.createWizard(state.wizard);
+
+  //Start game
+  window.requestAnimationFrame(newFrame);
 })
