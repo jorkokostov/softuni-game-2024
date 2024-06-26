@@ -9,10 +9,10 @@ function newFrame() {
   modifyWizardPosition();
 
   //Modify fireballs
-  const fireballs = document.querySelector('.fireball');
-  for (const fireball of fireballs) {
-    fireball.style.left = fireball.offsetLeft + config.magicSpeed + 'px';
-  }
+ const fireballs = document.querySelectorAll('.fireball');
+ for (const fireball of fireballs) {
+  fireball.style.left = fireball.offsetLeft + config.magicSpeed + 'px';
+ }
 
   //apply score
   state.score+= config.timePoints;

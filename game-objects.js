@@ -40,7 +40,7 @@ export const factory = {
       fireballElement.style.backgroundPosition= 'center';
       fireballElement.style.width= '10px';
       fireballElement.style.height= '10px';
-      fireballElement.styleposition= 'absolute';
+      fireballElement.style.position= 'absolute';
 
     //position
     fireballElement.style.left = wizard.x + wizard.width + 'px';
