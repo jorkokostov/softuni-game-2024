@@ -8,6 +8,14 @@ const state = {
     height: 50,
   },
   isGameOver: false,
+  points: 0,
+  controls: {
+    KeyA: false,
+    KeyS: false,
+    KeyD: false,
+    KeyW: false,
+    Space: false,
+  }
 };
   
 //Game object creation
@@ -39,6 +47,17 @@ const factory = {
 }
 
 //Input controll
+document.addEventListener('keydown', (e) => {
+  if(state.controls.hasOwnProperty(e.code)) {
+    state.controls[e.code] = true;
+  }
+});
+
+document.addEventListener('keyup' , (e) => {
+  if(state.controls.hasOwnProperty(e.code)) {
+    state.controls[e.code] = false;
+  }
+})
 
 //Game loop
 
